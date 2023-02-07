@@ -12,7 +12,12 @@ describe('My first test suite', () => {
     // expect(pageTitle).toContain('Example Domain');
     // expect(pageURL).toContain('example.com');
     // Modern way
-    expect(browser).toHaveTitleContaining('Example Domain');
-    expect(browser).toHaveUrlContaining('example.com');
+    await expect(browser).toHaveTitleContaining('Example Domain');
+    await expect(browser).toHaveUrlContaining('example.com');
+
+    const pageElement = await $('h1');
+    await expect(pageElement).toExist();
+    await expect(pageElement).toBeDisplayed();
+    await expect(pageElement).toHaveTextContaining('Example');
   });
 });
