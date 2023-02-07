@@ -6,7 +6,13 @@ describe('My first test suite', () => {
     let bigPause = 5000;
     await browser.url(exampleURL);
     await browser.pause(smallPause);
-    await browser.url('https://www.saucedemo.com/');
-    await browser.pause(bigPause);
+    // Old way
+    // const pageTitle = await browser.getTitle();
+    // const pageURL = await browser.getUrl();
+    // expect(pageTitle).toContain('Example Domain');
+    // expect(pageURL).toContain('example.com');
+    // Modern way
+    expect(browser).toHaveTitleContaining('Example Domain');
+    expect(browser).toHaveUrlContaining('example.com');
   });
 });
