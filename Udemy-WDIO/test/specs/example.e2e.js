@@ -20,4 +20,19 @@ describe('My first test suite', () => {
     await expect(pageElement).toBeDisplayed();
     await expect(pageElement).toHaveTextContaining('Example');
   });
+
+  it('Forms and Inputs', async () => {
+    await browser.url('https://www.saucedemo.com/');
+
+    const usernameInput = await $('#user-name');
+    const passwordInput = await $('#password');
+    const loginButton = await $('#login-button');
+
+    await usernameInput.setValue('standard_user');
+    await passwordInput.setValue('secret_sauce');
+    await loginButton.click();
+
+    const inventoryContainer = await $('#inventory_container');
+    await expect(inventoryContainer).toBeDisplayed();
+  });
 });
