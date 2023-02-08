@@ -46,7 +46,7 @@ describe('My first test suite', () => {
     await expect(option).toBeSelected();
   });
 
-  it.only('Set Browser Size', async () => {
+  it('Set Browser Size', async () => {
     await browser.setWindowSize(400, 400);
     await browser.url('https://example.com');
 
@@ -55,5 +55,24 @@ describe('My first test suite', () => {
     await selector.waitForDisplayed();
 
     await browser.pause(5000);
+  });
+
+  it('Device Emulation', async () => {
+    const mobile = [375, 812];
+    const tablet = [1024, 768];
+    const desktop = [1650, 1050];
+
+    // Mobile Device
+    await browser.setWindowSize(mobile[0], mobile[1]);
+    await browser.url('https://example.com');
+    await browser.pause(2000);
+    // Tablet Device
+    await browser.setWindowSize(tablet[0], tablet[1]);
+    await browser.url('https://example.com');
+    await browser.pause(2000);
+    // Desktop Device
+    await browser.setWindowSize(desktop[0], desktop[1]);
+    await browser.url('https://example.com');
+    await browser.pause(2000);
   });
 });
