@@ -75,4 +75,12 @@ describe('My first test suite', () => {
     await browser.url('https://example.com');
     await browser.pause(2000);
   });
+
+  it('Screenshots', async () => {
+    await browser.url('https://example.com');
+    await browser.saveScreenshot('my-screenshot.png');
+
+    const title = await $('h1');
+    await title.saveScreenshot('title-screenshot.png');
+  });
 });
