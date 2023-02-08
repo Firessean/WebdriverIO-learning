@@ -36,7 +36,7 @@ describe('My first test suite', () => {
     await expect(inventoryContainer).toBeDisplayed();
   });
 
-  it.only('Selectbox and Checkbox', async () => {
+  it('Selectbox and Checkbox', async () => {
     await browser.url('https://devexpress.github.io/testcafe/example/');
 
     const selectbox = await $('#preferred-interface');
@@ -44,5 +44,11 @@ describe('My first test suite', () => {
 
     const option = await $('option=Both');
     await expect(option).toBeSelected();
+  });
+
+  it('Set Browser Size', async () => {
+    await browser.setWindowSize(400, 400);
+    await browser.url('https://example.com');
+    await browser.pause(5000);
   });
 });
