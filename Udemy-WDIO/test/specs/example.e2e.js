@@ -35,4 +35,14 @@ describe('My first test suite', () => {
     const inventoryContainer = await $('#inventory_container');
     await expect(inventoryContainer).toBeDisplayed();
   });
+
+  it.only('Selectbox and Checkbox', async () => {
+    await browser.url('https://devexpress.github.io/testcafe/example/');
+
+    const selectbox = await $('#preferred-interface');
+    await selectbox.selectByVisibleText('Both');
+
+    const option = await $('option=Both');
+    await expect(option).toBeSelected();
+  });
 });
