@@ -46,9 +46,14 @@ describe('My first test suite', () => {
     await expect(option).toBeSelected();
   });
 
-  it('Set Browser Size', async () => {
+  it.only('Set Browser Size', async () => {
     await browser.setWindowSize(400, 400);
     await browser.url('https://example.com');
+
+    const selector = await $('h1');
+    await selector.waitForExist();
+    await selector.waitForDisplayed();
+
     await browser.pause(5000);
   });
 });
