@@ -28,4 +28,10 @@ describe('Advanced Testing', () => {
     await browser.waitAndClick('#file-submit');
     await browser.pause(5000);
   });
+
+  it('Change browser session', async () => {
+    console.log(`SESSION BEFORE RELOAD ${browser.sessionId}`);
+    await browser.reloadSession();
+    console.log(`SESSION AFTER RELOAD ${browser.sessionId}`);
+  });
 });
