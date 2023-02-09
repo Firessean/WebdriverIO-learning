@@ -5,25 +5,27 @@ describe('Advanced Testing', () => {
   });
   it('File Upload 1', async () => {
     const filePath = './my-screenshot.png';
-    const remoteFilePath = await browser.uploadFile(filePath);
-    await $('#file-upload').setValue(remoteFilePath);
-    await $('#file-submit').click();
+    await browser.customFileUpload(filePath, '#file-upload', '#file-submit');
     await browser.pause(5000);
   });
 
   it('File Upload 2', async () => {
     const filePath = './my-screenshot.png';
-    const remoteFilePath = await browser.uploadFile(filePath);
-    await $('#file-upload').setValue(remoteFilePath);
-    await $('#file-submit').click();
+    await browser.customFileUpload(filePath, '#file-upload', '#file-submit');
     await browser.pause(5000);
   });
 
   it('File Upload 3', async () => {
     const filePath = './my-screenshot.png';
-    const remoteFilePath = await browser.uploadFile(filePath);
-    await $('#file-upload').setValue(remoteFilePath);
-    await $('#file-submit').click();
+    await browser.customFileUpload(filePath, '#file-upload', '#file-submit');
+    await browser.pause(5000);
+  });
+
+  it('Display Title and URL', async () => {
+    const results = await browser.getTitleAndUrl();
+    console.log(`TITLE = ${results.title}`);
+    console.log(`URL = ${results.url}`);
+    await browser.waitAndClick('#file-submit');
     await browser.pause(5000);
   });
 });
