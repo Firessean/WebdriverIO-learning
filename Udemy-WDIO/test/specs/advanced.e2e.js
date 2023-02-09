@@ -34,4 +34,12 @@ describe('Advanced Testing', () => {
     await browser.reloadSession();
     console.log(`SESSION AFTER RELOAD ${browser.sessionId}`);
   });
+
+  it.only('Create and switch new window', async () => {
+    await browser.url('https://google.com');
+    await browser.newWindow('https://webdriver.io');
+    await browser.pause(5000);
+    await browser.switchWindow('google.com');
+    await browser.pause(5000);
+  });
 });
