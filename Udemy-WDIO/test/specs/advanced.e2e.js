@@ -35,11 +35,16 @@ describe('Advanced Testing', () => {
     console.log(`SESSION AFTER RELOAD ${browser.sessionId}`);
   });
 
-  it.only('Create and switch new window', async () => {
+  it('Create and switch new window', async () => {
     await browser.url('https://google.com');
     await browser.newWindow('https://webdriver.io');
     await browser.pause(5000);
     await browser.switchWindow('google.com');
     await browser.pause(5000);
+  });
+
+  it.only('Execute JavaScript Code', async () => {
+    const result = await browser.execute((a, b) => a + b, 5, 10);
+    await expect(result).toBe(15);
   });
 });
