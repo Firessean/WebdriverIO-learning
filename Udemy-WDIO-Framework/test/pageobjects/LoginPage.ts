@@ -16,7 +16,17 @@ class LoginPage {
     return $('input[type="submit"]');
   }
 
+  public get errorMessage() {
+    return $('.alert-error');
+  }
+
   // Functions
+  public async assertLoginPageError() {
+    await expect(this.errorMessage).toHaveTextContaining(
+      'Login and/or password are wrong.'
+    );
+  }
+
   public async assertLoginPageIsVisible() {
     await this.loginForm.waitForDisplayed();
   }
