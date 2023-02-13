@@ -1,4 +1,7 @@
-class HomePage {
+// @ts-ignore
+import AbstractPage from './AbstractPage.ts';
+
+class HomePage extends AbstractPage {
   // Here selectors
 
   public get feedbackLink() {

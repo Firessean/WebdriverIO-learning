@@ -1,4 +1,7 @@
-class FeedbackPage {
+// @ts-ignore
+import AbstractPage from './AbstractPage.ts';
+
+class FeedbackPage extends AbstractPage {
   public get feedbackForm() {
     return $('.form-inputs');
   }

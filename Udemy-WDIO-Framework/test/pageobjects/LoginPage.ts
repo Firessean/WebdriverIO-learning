@@ -1,4 +1,7 @@
-class LoginPage {
+// @ts-ignore
+import AbstractPage from './AbstractPage.ts';
+
+class LoginPage extends AbstractPage {
   // Selectors
   public get loginForm() {
     return $('#login_form');

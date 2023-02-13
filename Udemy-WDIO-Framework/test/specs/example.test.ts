@@ -14,7 +14,8 @@ describe('Login test', () => {
     await LoginPage.assertLoginPageIsVisible();
     await LoginPage.login('test', 'test');
     await LoginPage.assertLoginPageError();
-    await browser.pause(4000);
+    // await browser.pause(4000);
+    await LoginPage.waitForSeconds(3);
   });
 });
 
@@ -29,6 +30,7 @@ describe('Feedback test', () => {
       'Test message'
     );
     await FeedbackPage.assertSubmitFeedback();
-    await browser.pause(5000);
+    // await browser.pause(5000);
+    await FeedbackPage.waitForSeconds(5);
   });
 });
