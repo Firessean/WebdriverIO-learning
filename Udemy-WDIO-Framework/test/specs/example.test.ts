@@ -4,11 +4,13 @@ import HomePage from '../pageobjects/HomePage.ts';
 import LoginPage from '../pageobjects/LoginPage.ts';
 // @ts-ignore
 import FeedbackPage from '../pageobjects/FeedbackPage.ts';
+// @ts-ignore
+import Navbar from '../pageobjects/components/Navbar.ts';
 
 describe('Login test', () => {
   it('should not login with invalid username and password', async () => {
     await HomePage.visit();
-    await HomePage.clickOnSignIn();
+    await Navbar.clickOnSignIn();
     await LoginPage.assertLoginPageIsVisible();
     await LoginPage.login('test', 'test');
     await LoginPage.assertLoginPageError();
