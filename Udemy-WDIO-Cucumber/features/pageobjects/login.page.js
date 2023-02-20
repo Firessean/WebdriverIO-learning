@@ -1,39 +1,36 @@
 import BasePage from './base.page.js';
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class LoginPage extends BasePage {
-  /**
-   * define selectors using getter methods
-   */
   get inputUsername() {
-    return $('#username');
+    return $('#user_login');
   }
 
   get inputPassword() {
-    return $('#password');
+    return $('#user_password');
   }
 
   get btnSubmit() {
-    return $('button[type="submit"]');
+    return $('input[type="submit"]');
   }
 
-  /**
-   * a method to encapsule automation code to interact with the page
-   * e.g. to login using username and password
-   */
+  get errorMessage() {
+    return $('.alert-error');
+  }
+
+  async visit() {
+    await browser.url('http://zero.webappsecurity.com/login.html');
+  }
+
   async login(username, password) {
     await this.inputUsername.setValue(username);
     await this.inputPassword.setValue(password);
     await this.btnSubmit.click();
   }
 
-  /**
-   * overwrite specific options to adapt it to page object
-   */
-  open() {
-    return super.open('login');
+  async assertErrormessage() {
+    await expect(this.assertErrormessage).toHaveTextContaining(
+      'Login and/or password are wrong.'
+    );
   }
 }
 
