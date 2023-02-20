@@ -1,5 +1,9 @@
 {
-    "compilerOptions": {
-        "types": ["node", "webdriverio/async", "@wdio/cucumber-framework"]
-    }
+  "compilerOptions": {
+    "types": [
+      "node",
+      "webdriverio/async",
+      "@wdio/cucumber-framework"
+    ]
+  }
 }
