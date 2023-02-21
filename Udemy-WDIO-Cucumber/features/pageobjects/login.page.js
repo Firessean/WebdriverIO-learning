@@ -28,7 +28,7 @@ class LoginPage extends BasePage {
   }
 
   async assertErrormessage() {
-    await expect(this.assertErrormessage).toHaveTextContaining(
+    await expect(this.errorMessage).toHaveTextContaining(
       'Login and/or password are wrong.'
     );
   }
