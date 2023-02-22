@@ -1,4 +1,4 @@
-Feature('Example Test Suite');
+Feature('Example Test Suite Number Two');
 
 Scenario('My first test', ({ I }) => {
   I.amOnPage('https://example.com/');
