@@ -1,7 +1,6 @@
 Feature('Example Test Suite');
 
-Scenario('My first', ({ I }) => {
+Scenario('My first test', ({ I }) => {
   I.amOnPage('https://example.com/');
-  I.wait(2);
   I.seeElement('h1');
 });

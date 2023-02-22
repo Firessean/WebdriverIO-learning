@@ -14,6 +14,7 @@ exports.config = {
     WebDriver: {
       url: 'http://localhost',
       browser: 'chrome',
+      smartWait: 5000,
     },
   },
   include: {
