@@ -13,11 +13,23 @@ exports.config = {
   helpers: {
     WebDriver: {
       url: 'http://localhost',
-      browser: 'chrome'
-    }
+      browser: 'chrome',
+    },
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
   },
-  name: 'Udemy-Codecept'
-}
+  name: 'Udemy-Codecept',
+  plugins: {
+    pauseOnFail: {},
+    retryFailedStep: {
+      enabled: false,
+    },
+    tryTo: {
+      enabled: true,
+    },
+    screenshotOnFail: {
+      enabled: false,
+    },
+  },
+};
