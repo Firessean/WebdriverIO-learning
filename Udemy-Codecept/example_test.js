@@ -1,8 +1,9 @@
 Feature('Example Test Suite');
 
-Scenario('My first test', ({ I }) => {
+Scenario('My first test', ({ I, ExamplePage }) => {
   I.amOnPage('https://example.com/');
-  I.seeElement('h1');
+  // I.seeElement('h1');
+  ExamplePage.assertTitle();
 });
 
 Scenario('My second test', ({ I }) => {

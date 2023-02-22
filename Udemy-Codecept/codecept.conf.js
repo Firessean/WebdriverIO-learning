@@ -19,6 +19,7 @@ exports.config = {
   },
   include: {
     I: './steps_file.js',
+    ExamplePage: './pages/example.page.js',
   },
   name: 'Udemy-Codecept',
   plugins: {
@@ -30,7 +31,7 @@ exports.config = {
       enabled: true,
     },
     screenshotOnFail: {
-      enabled: true,
+      enabled: false,
     },
   },
 };
