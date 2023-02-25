@@ -17,18 +17,18 @@
         <br>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpngGRjYX1ca7qAADU3K6eGLj7ShQE3L2otdzfryl_Y9Ht2QRoQKYQbsXd36XIxMbYOw0&usqp=CAU" alt="Image not found" width="100px" height="100px">
 
-        <table>
-            <tr>
-                <th>First Name</th>
+        <table id="users-table">
+            <tr class="table-row">
+                <th id="table_header-name">First Name</th>
                 <th>Last Name</th>
                 <th>Age</th>
             </tr>
-            <tr>
+            <tr class="table-row">
                 <td>Mark</td>
                 <td>Smith</td>
                 <td>25</td>
             </tr>
-            <tr>
+            <tr class="table-row">
                 <td>Hector</td>
                 <td>Domingo</td>
                 <td>30</td>
@@ -43,13 +43,13 @@
             <li>Golang</li>
         </ul>
 
-        <ol>
+        <ol data-test-id="list-with-names">
             <li>Mark</li>
             <li>Peter</li>
             <li>Barbara</li>
         </ol>
 
-        <form>
+        <form data-test-id="login-form">
             First Name:<br>
             <input type="text" placeholder="Enter your first name">
             <br>
